@@ -1,4 +1,5 @@
 //1310. XOR Queries of a Subarray
+#include <bits/stdc++.h>
 class Solution {
 public:
     vector<int> xorQueries(vector<int>& arr, vector<vector<int>>& queries) {
