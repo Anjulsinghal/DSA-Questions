@@ -1,4 +1,4 @@
-// Leetcode 884 uncommon-words-from-two-sentences
+// Leetcode 884
 // https://leetcode.com/problems/uncommon-words-from-two-sentences/
 
 class Solution {
