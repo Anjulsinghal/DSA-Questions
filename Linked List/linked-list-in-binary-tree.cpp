@@ -24,22 +24,18 @@
  */
 class Solution {
 public:
-    bool isSubPath(ListNode* head, TreeNode* root) {
-        return dfs(head, head, root);
+    bool checkPath(ListNode* head, TreeNode* root) 
+    {
+        if(!head) return true;
+        if(!root or head->val != root->val) return false;
+        return checkPath(head->next, root->left) or checkPath(head->next, root->right);
     }
-    
-    bool dfs(ListNode* head, ListNode* cur, TreeNode* root) {
-        if (cur == nullptr) return true;  // Successfully matched the list
-        if (root == nullptr) return false; // Reached the end of the tree without matching
-        
-        if (cur->val == root->val) {
-            cur = cur->next;  // Move to the next list node if value matches
-        } else if (head->val == root->val) {
-            head = head->next; // Start new matching attempt if the value matches head of list
-        } else {
-            cur = head;  // Reset the matching pointer
-        }
-        
-        return dfs(head, cur, root->left) || dfs(head, cur, root->right); // Recursively check left and right subtrees
+
+    bool isSubPath(ListNode* head, TreeNode* root) 
+    {
+        if(!root) return false;
+        return (head->val == root->val && checkPath(head, root)) or 
+               isSubPath(head, root->left) or
+               isSubPath(head, root->right);
     }
 };
