@@ -1,5 +1,5 @@
 // Leetcode. 729. my-calendar-i
-// https://leetcode.com/problems/my-calendar-i/
+// https://leetcode.com/problems/my-calendar-i
 
 class MyCalendar {
     map<int, int> intervals; // Stores intervals with start as key and end as value
