@@ -8,10 +8,8 @@ public:
         int n = nums.size();
         sort(nums.begin(), nums.end());
         for (int i = 0; i < n; i++) {
-            //remove duplicates:
             if (i != 0 && nums[i] == nums[i - 1]) continue;
 
-            //moving 2 pointers:
             int j = i + 1;
             int k = n - 1;
             while (j < k) {
